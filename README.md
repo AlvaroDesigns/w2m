@@ -1,6 +1,6 @@
 <p align="center">
   <a href="www.alvarodesigns.com">
-    <img src="https://www.w2m.travel/css/img/logo-w2m-global.svg width="150">
+    <img src="https://www.w2m.travel/css/img/logo-w2m-global.svg" width="150">
   </a>
 </p>
 
