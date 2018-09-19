@@ -127,7 +127,7 @@
   height: $button-floating-size;
   line-height: $button-floating-size;
   padding: 0;
-  background-color: $button-floating-background;
+  background-color: #505759;
   border-radius: $button-floating-radius;
   @extend .z-depth-1;
   transition: background-color .3s;
@@ -237,11 +237,11 @@ button.btn-floating {
     }
   }
   position: fixed;
-  right: 23px;
+  left: 23px;
   bottom: 23px;
   padding-top: 15px;
   margin-bottom: 0;
-  z-index: 997;
+  z-index: 999;
   ul {
     left: 0;
     right: 0;
