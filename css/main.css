@@ -99,9 +99,12 @@
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px; }
   .toast__container {
-    position: absolute;
-    bottom: 30px;
-    right: 30px; }
+    position: fixed;
+    right: 23px;
+    bottom: 23px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 999; }
   .toast__cell {
     display: inline-block; }
   .toast .add-margin {
