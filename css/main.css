@@ -164,6 +164,9 @@
   position: relative;
   z-index: 20;
   padding: 20px 0; }
+  @media only screen and (min-width: 994px) {
+    .header__content {
+      display: none; } }
 .header__logo {
   display: block;
   background-size: 100%;
