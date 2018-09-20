@@ -15,6 +15,33 @@
   </head>
 
   <body>
+  <nav class="header__content">
+      <div class="nav-wrapper header__wrapper">
+        <a href="http://panels.alvarodesigns.com" class="brand-logo">
+            <img class="header__logo" src="https://www.w2m.travel/css/img/logo-w2m-global.svg">
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="navbar__listPrimary">
+              <a href="https://www.w2m.travel" class="waves-effect waves-teal navbar__listLink">Home</a>
+          </li>
+          <li class="navbar__listPrimary">
+              <a href="https://www.ejuniper.com/" class="waves-effect waves-teal navbar__listLink">Juniper Web</a>
+          </li>
+          <li class="navbar__listPrimary">
+              <a href="http://xml.bookingengine.es/doc/Documentation/Hotels/push/JuniperXMLDoc_JP_PUSH.pdf" class="waves-effect waves-teal navbar__listLink">Juniper Push</a>
+          </li>
+          <li class="navbar__listPrimary">
+              <a href="http://xml.bookingengine.es/doc/Documentation/Hotels/pull/JuniperXMLDoc_PULL.pdf" class="waves-effect waves-teal navbar__listLink">Juniper Pull</a>
+          </li>
+          <li class="navbar__listPrimary">
+              <a href="http://xml.bookingengine.es/doc/Documentation/WebserviceJP/JP_WebService_Documentation.pdf" class="waves-effect waves-teal navbar__listLink">Juniper JP WB</a>
+          </li>
+          <li class="navbar__listPrimary">
+              <a class="waves-effect waves-teal navbar__listLink" href="https://www.w2m.travel/#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <ul id="nav-mobile" class="sidenav sidenav-fixed navbar__wrapper" style="transform: translateX(0px);">
         <li class="navbar__contentLogo">
             <img id="navbar__logo" src="img/partner-logo01.png">
@@ -193,7 +220,7 @@ jQuery("#cookie-bar").hide();
 }
 });
 */
-
+      $(".dropdown-trigger").dropdown();
       $(document).ready(function(){
         /*$('.toast__container').delay(function()) {
           e.preventDefault();

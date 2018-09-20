@@ -18,6 +18,9 @@ $w2m: #c4d600;
         transform: translateX(0);
         position: fixed;
         justify-content: center;
+        @media only screen and (max-width: 993px) {
+            display: none;
+        }
     }
 
     &__contentLogo {
@@ -211,6 +214,28 @@ $w2m: #c4d600;
 .w2m-bg {
     background-color: $w2m;
 }
+
+.header {
+    &__content {
+        background-color: white;
+        border-top: 4px solid $w2m;
+        position: relative;
+        z-index: 20;
+        padding: 20px 0;
+    }
+    &__logo {
+        display: block;
+        background-size: 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 80px;
+        padding: 0;
+        margin: -12px;
+        overflow: hidden;
+    }
+}
+
+
 
 /*======================
    Set Cookies

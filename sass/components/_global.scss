@@ -16,6 +16,9 @@ body {
 
 main {
   padding-left: 90px;
+  @media only screen and (max-width: 993px) {
+    padding-left: initial;
+}
   // flex: 1 0 auto;
 }
 

@@ -15,6 +15,9 @@
   transform: translateX(0);
   position: fixed;
   justify-content: center; }
+  @media only screen and (max-width: 993px) {
+    .navbar__wrapper {
+      display: none; } }
 .navbar__contentLogo {
   background-color: #c4d600;
   height: 200px;
@@ -154,6 +157,22 @@
 
 .w2m-bg {
   background-color: #c4d600; }
+
+.header__content {
+  background-color: white;
+  border-top: 4px solid #c4d600;
+  position: relative;
+  z-index: 20;
+  padding: 20px 0; }
+.header__logo {
+  display: block;
+  background-size: 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 80px;
+  padding: 0;
+  margin: -12px;
+  overflow: hidden; }
 
 /*======================
    Set Cookies
@@ -2238,6 +2257,9 @@ body {
 
 main {
   padding-left: 90px; }
+  @media only screen and (max-width: 993px) {
+    main {
+      padding-left: initial; } }
 
 button,
 input,
