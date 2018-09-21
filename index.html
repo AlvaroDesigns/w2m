@@ -238,8 +238,7 @@
           e.preventDefault();
           var parent = $(this).parent('.toast')
           parent.fadeOut("slow", function() { $(this).remove(); } );
-          
-          document.cookie = "cookieToast=1; expire=; path=/;";
+          document.cookie = "cookieToast" + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
         });
       });
 
