@@ -218,29 +218,16 @@
     jQuery("#cookie-bar").hide();
     }
     });
-        function getCookie(cname) {
-            let name = cname + "=";
-            let ca = document.cookie.split(';');
-            for(let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
+    
 
-      $(document).ready(function(){
-        $('.toast__close').click(function(e){
-          e.preventDefault();
-          var parent = $(this).parent('.toast')
-          parent.fadeOut("slow", function() { $(this).remove(); } );
-          document.cookie = "cookieToast" + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
-        });
-      });
+    $(document).ready(function(){
+    $('.toast__close').click(function(e){
+        e.preventDefault();
+        var parent = $(this).parent('.toast')
+        parent.fadeOut("slow", function() { $(this).remove(); } );
+        document.cookie = "cookieToast" + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
+    });
+    });
 
     </script>
 
@@ -250,7 +237,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-75045503-2');
     </script>
 
