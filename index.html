@@ -180,46 +180,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script>
-/*
-//All the cookie setting stuff
-function SetCookie(cookieName, cookieValue, nDays) {
-"use strict";
-var today = new Date();
-var expire = new Date();
-if (nDays == null || nDays == 0) nDays = 1;
-expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
-}
-function ReadCookie(cookieName) {
-"use strict";
-var theCookie = " " + document.cookie;
-var ind = theCookie.indexOf(" " + cookieName + "=");
-if (ind == -1) ind = theCookie.indexOf(";" + cookieName + "=");
-if (ind == -1 || cookieName == "") return "";
-var ind1 = theCookie.indexOf(";", ind + 1);
-if (ind1 == -1) ind1 = theCookie.length;
-return unescape(theCookie.substring(ind + cookieName.length + 2, ind1));
-}
-function DeleteCookie(cookieName){
-"use strict";
-var today = new Date();
-var expire = new Date() - 30;
-expire.setTime(today.getTime() - 3600000 * 24 * 90);
-document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
-}
-function AcceptCookies() {
-SetCookie('sgCookies', true, 30);
-jQuery("#cookie-bar").hide();
-}
-$(document).ready(function (e) {  
-var toTop = $("<div id='cookie-bar'><div id='contentcookie'><p>We use cookies and similar technologies to recognize your repeat visits and preferences, to measure the effectiveness of campaigns, and improve our websites. By clicking “I accept” on this banner or using our site, you consent to the use of cookies.</p><button id='Cookie' tabindex=1 onclick='AcceptCookies();'>I accept </button><div class='clear'></div></div></div>").appendTo("body");
-if (!ReadCookie("sgCookies")) { //If the cookie has not been set
-jQuery("#cookie-bar").show();
-} else {
-jQuery("#cookie-bar").hide();
-}
-});
-*/
+    //All the cookie setting stuff
+    function SetCookie(cookieName, cookieValue, nDays) {
+    "use strict";
+    var today = new Date();
+    var expire = new Date();
+    if (nDays == null || nDays == 0) nDays = 1;
+    expire.setTime(today.getTime() + 3600000 * 24 * nDays);
+    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
+    }
+    function ReadCookie(cookieName) {
+    "use strict";
+    var theCookie = " " + document.cookie;
+    var ind = theCookie.indexOf(" " + cookieName + "=");
+    if (ind == -1) ind = theCookie.indexOf(";" + cookieName + "=");
+    if (ind == -1 || cookieName == "") return "";
+    var ind1 = theCookie.indexOf(";", ind + 1);
+    if (ind1 == -1) ind1 = theCookie.length;
+    return unescape(theCookie.substring(ind + cookieName.length + 2, ind1));
+    }
+    function DeleteCookie(cookieName){
+    "use strict";
+    var today = new Date();
+    var expire = new Date() - 30;
+    expire.setTime(today.getTime() - 3600000 * 24 * 90);
+    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString();
+    }
+    function AcceptCookies() {
+    SetCookie('sgCookies', true, 30);
+    jQuery("#cookie-bar").hide();
+    }
+    $(document).ready(function (e) {  
+    var toTop = $("<div id='cookie-bar'><div id='contentcookie'><p>We use cookies and similar technologies to recognize your repeat visits and preferences, to measure the effectiveness of campaigns, and improve our websites. By clicking “I accept” on this banner or using our site, you consent to the use of cookies.</p><button id='Cookie' tabindex=1 onclick='AcceptCookies();'>I accept </button><div class='clear'></div></div></div>").appendTo("body");
+    if (!ReadCookie("sgCookies")) { //If the cookie has not been set
+    jQuery("#cookie-bar").show();
+    } else {
+    jQuery("#cookie-bar").hide();
+    }
+    });
         function getCookie(cname) {
             let name = cname + "=";
             let ca = document.cookie.split(';');
@@ -234,24 +232,14 @@ jQuery("#cookie-bar").hide();
             }
             return "";
         }
- /*   if(_config.show === $show && !getCookie('modal_basic_closed')) {
-        $("#modal-basic-t1").modal('show');
-
-        $(window).on('click', () => {
-            if (!getCookie('modal_basic_closed')) {
-                $("#modal-basic-t1").modal('hide');
-                document.cookie = "modal_basic_closed=1; expire=; path=/;";
-            }
-        });
-    }
-*/
 
       $(document).ready(function(){
         $('.toast__close').click(function(e){
           e.preventDefault();
           var parent = $(this).parent('.toast')
           parent.fadeOut("slow", function() { $(this).remove(); } );
-          document.cookie = "modal_basic_closed=1; expire=; path=/;";
+          
+          document.cookie = "cookieToast=1; expire=; path=/;";
         });
       });
 
