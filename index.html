@@ -220,17 +220,38 @@ jQuery("#cookie-bar").hide();
 }
 });
 */
-      $(".dropdown-trigger").dropdown();
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+ /*   if(_config.show === $show && !getCookie('modal_basic_closed')) {
+        $("#modal-basic-t1").modal('show');
+
+        $(window).on('click', () => {
+            if (!getCookie('modal_basic_closed')) {
+                $("#modal-basic-t1").modal('hide');
+                document.cookie = "modal_basic_closed=1; expire=; path=/;";
+            }
+        });
+    }
+*/
+
       $(document).ready(function(){
-        /*$('.toast__container').delay(function()) {
-          e.preventDefault();
-          var fadeInToast = $(this).parent('.toast')
-          fadeInToast(1300).fadeIn(400);
-        });,*/
         $('.toast__close').click(function(e){
           e.preventDefault();
           var parent = $(this).parent('.toast')
           parent.fadeOut("slow", function() { $(this).remove(); } );
+          document.cookie = "modal_basic_closed=1; expire=; path=/;";
         });
       });
 
