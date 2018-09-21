@@ -217,26 +217,36 @@
     } else {
     jQuery("#cookie-bar").hide();
     }
-    });
+});
     
 
-    $('.toast__close').click(function(e){
-        var today = new Date();
-        var expire = new Date();
-        if (nDays == null || nDays == 0) nDays = 1;
-        expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-        document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
-        
-        e.preventDefault();
-        var parent = $(this).parent('.toast')
-        parent.fadeOut("slow", function() { $(this).remove(); } );
-        function AcceptCookies() {
-            SetCookie('Test', true, 30);
-            jQuery("#cookie-bar").hide();
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    $(document).ready(function (e) {
+        const toastClose = ".toast__close'";
+
+        if (toastClose && !getCookie('tabs_popover_closed')) {
+            $('toastClose').click(function(e){
+                e.preventDefault();
+                var parent = $(this).parent('.toast')
+                parent.fadeOut("slow", function() { $(this).remove(); } );
+                document.cookie = "tabs_popover_closed=1; expire=; path=/;";
+                $( ".toast__container" ).addClass( "hide" );
+            });
         }
     });
-    });
-
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
