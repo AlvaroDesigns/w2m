@@ -240,7 +240,7 @@
             e.preventDefault();
             var parent = $(this).parent('.toast')
             parent.fadeOut("slow", function() { $(this).remove(); } );
-            document.cookie = "toast_closed; expire=; path=/;";
+            document.cookie = cookieName + ";expires=" + expire.toGMTString();
             $( ".toast__container" ).addClass( "hide" );
         });
     });
