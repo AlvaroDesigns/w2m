@@ -236,18 +236,15 @@
         return "";
     }
     $(document).ready(function (e) {
-        const toastClose = ".toast__close'";
-
-        if (toastClose && !getCookie('tabs_popover_closed')) {
-            $('toastClose').click(function(e){
-                e.preventDefault();
-                var parent = $(this).parent('.toast')
-                parent.fadeOut("slow", function() { $(this).remove(); } );
-                document.cookie = "tabs_popover_closed=1; expire=; path=/;";
-                $( ".toast__container" ).addClass( "hide" );
-            });
-        }
+        $('.toast__close').click(function(e){
+            e.preventDefault();
+            var parent = $(this).parent('.toast')
+            parent.fadeOut("slow", function() { $(this).remove(); } );
+            document.cookie = "toast_closed; expire=; path=/;";
+            $( ".toast__container" ).addClass( "hide" );
+        });
     });
+
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
