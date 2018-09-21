@@ -236,13 +236,17 @@
         return "";
     }
     $(document).ready(function (e) {
-        $('.toast__close').click(function(e){
-            e.preventDefault();
-            var parent = $(this).parent('.toast')
-            parent.fadeOut("slow", function() { $(this).remove(); } );
-            document.cookie = cookieName + ";expires=" + expire.toGMTString();
-            $( ".toast__container" ).addClass( "hide" );
-        });
+        if('.toast__close' && !getCookie('modal_basic_closed')) {
+            $('.toast__close').click(function(e){
+                if (!getCookie('modal_basic_closed')) {
+                    e.preventDefault();
+                    var parent = $(this).parent('.toast')
+                    parent.fadeOut("slow", function() { $(this).remove(); } );
+                    document.cookie = "modal_basic_closed=1; expire=; path=/;";
+                    $( ".toast__container" ).addClass( "hide" );
+                }
+            });
+        }
     });
 
     </script>
